@@ -1,4 +1,4 @@
-FROM hegand:oraclejdk8
+FROM hegand/jdk:oraclejdk8
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH

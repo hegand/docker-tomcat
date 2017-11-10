@@ -29,11 +29,12 @@ ENV TOMCAT_ASC_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOM
 
 RUN set -x \
 	\
+	&& apk add --no-cache \
+		libstdc++ \
 	&& apk add --no-cache --virtual .fetch-deps \
 		ca-certificates \
 		tar \
 		openssl \
-		libstdc++ \
 	&& wget -O tomcat.tar.gz "$TOMCAT_TGZ_URL" \
 	&& wget -O tomcat.tar.gz.asc "$TOMCAT_ASC_URL" \
 	&& gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz \

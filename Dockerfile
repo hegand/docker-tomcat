@@ -33,6 +33,7 @@ RUN set -x \
 		ca-certificates \
 		tar \
 		openssl \
+		libstdc++ \
 	&& wget -O tomcat.tar.gz "$TOMCAT_TGZ_URL" \
 	&& wget -O tomcat.tar.gz.asc "$TOMCAT_ASC_URL" \
 	&& gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz \

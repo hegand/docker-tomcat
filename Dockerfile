@@ -38,6 +38,8 @@ RUN set -ex; \
 	fi
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		libapr1 \
+		wget \
+		ca-certificates \
 		openssl="$OPENSSL_VERSION" \
 	&& rm -rf /var/lib/apt/lists/*
 
